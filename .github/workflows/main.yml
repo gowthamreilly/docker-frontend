@@ -1,0 +1,13 @@
+name: Docker Frontend
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubunutu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build -t gowthamreilly/docker-frontend -f Dockerfile.dev .
+      - run: docker run -e CI=true gowthamreilly/docker-frontend npm run test
