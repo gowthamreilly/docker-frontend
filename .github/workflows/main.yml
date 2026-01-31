@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: docker build -t gowthamreilly/docker-frontend -f Dockerfile.dev .
